@@ -1,0 +1,15 @@
+.AppContainer {
+	/* margin: 0 auto; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+
+.buttons {
+	background-color: aquamarine;
+	width: 210px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
