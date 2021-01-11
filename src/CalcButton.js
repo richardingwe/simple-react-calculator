@@ -2,9 +2,10 @@ import React from 'react';
 import "./CalcButton.css";
 
 export default function CalcButton(props) {
+    const { addDataNum } = props;
     return (
-        <div className="button">
-            <p>{props.operand}</p>
+        <div className="button" onClick={() => addDataNum(props.dataNum)}>
+            <p>{props.dataNum}</p>
         </div>
     );
 }

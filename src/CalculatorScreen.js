@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function CalculatorScreen() {
+export default function CalculatorScreen({ value }) {
     const [inputVal, setInputVal] = useState("");
     const handleChange = (e) => {
         setInputVal(e.target.value);
@@ -8,7 +8,7 @@ export default function CalculatorScreen() {
     return (
         <div>
             <form>
-                <input type="text" name="name" value={inputVal} onChange={handleChange} placeholder="0" />
+                <input type="text" name="name" value={value} onChange={handleChange} placeholder="0" />
             </form>
         </div>
     );
