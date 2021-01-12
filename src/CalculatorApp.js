@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import CalcButton from './CalcButton';
 import CalculatorScreen from "./CalculatorScreen";
 import "./CalculatorApp.css";
@@ -12,9 +12,13 @@ export default function CalculatorApp(props) {
     const solve = () => {
         setAnswer(eval(value));
     };
-    const clear = () => {
+    const clearAll = () => {
         setValue('');
         setAnswer('');
+    };
+    const clear = () => {
+        let cleared = value.slice(0, value.length - 1);
+        setValue(cleared);
     };
     return (
         <div className="AppContainer">
@@ -26,7 +30,7 @@ export default function CalculatorApp(props) {
                         {props.operators.map((button, idx) => (
                             <CalcButton key={idx} dataNum={button} addDataNum={addDataNum} />
                         ))}
-                        <div className="button" onClick={clear}>
+                        <div className="button" onClick={clearAll}>
                             <p>C</p>
                         </div>
                     </div>
@@ -40,7 +44,7 @@ export default function CalculatorApp(props) {
                     </div>
                 </div>
                 <div className="operators2">
-                    <div className="button clear" onClick={solve}>
+                    <div className="button clear" onClick={clear}>
                         <p>clear</p>
                     </div>
                     {props.operators2.map((button, idx) => (
