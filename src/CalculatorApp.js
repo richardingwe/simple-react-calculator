@@ -45,7 +45,7 @@ export default function CalculatorApp(props) {
                 </div>
                 <div className="operators2">
                     <div className="button clear" onClick={clear}>
-                        <p>clear</p>
+                        <p><i className="fa fa-backspace" /></p>
                     </div>
                     {props.operators2.map((button, idx) => (
                         <CalcButton key={idx} dataNum={button} addDataNum={addDataNum} />
