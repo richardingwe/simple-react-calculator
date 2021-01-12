@@ -1,27 +1,72 @@
 .AppContainer {
-	/* margin: 0 auto; */
+	margin: auto;
+	width: 300px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
 }
 
+.keys {
+	display: flex;
+}
+
+.operators1 {
+	background-color: rgb(52, 123, 236);
+	width: 240px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.operators2 {
+	background-color: rgb(89, 180, 233);
+	width: 60px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
 .buttons {
-	background-color: aquamarine;
-	width: 210px;
-	margin: 0 auto;
+	width: 240px;
+	background-color: rgb(18 17 38);
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.button {
+.operators1 .button {
+	display: inline;
+	/* justify-content: center;
+	align-content: center; */
+	width: 25%;
+	height: 25%;
+}
+.operators2 .button {
 	display: flex;
 	justify-content: center;
 	align-content: center;
-	width: 70px;
-	height: 70px;
-	background-color: aquamarine;
+	width: 100%;
+	height: 79.5px;
+	font-size: 1.3rem;
 }
+.operators2 .button p {
+	/* margin: 0 auto; */
+}
+.operators2 .button.clear {
+	font-size: 1rem;
+	display: inline;
+	width: 100%;
+	height: 55px;
+}
+.buttons .button {
+	display: flex;
+	color: white;
+	font-size: 2rem;
+	width: 80px;
+	height: 80px;
+}
+.buttons .button p {
+	margin: auto;
+}
+
 .button:hover {
 	background-color: rgb(40, 182, 134);
 }

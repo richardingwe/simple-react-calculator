@@ -5,7 +5,7 @@ import "./CalculatorApp.css";
 
 export default function CalculatorApp(props) {
     let [value, setValue] = useState('');
-    let [answer, setAnswer] = useState(0);
+    let [answer, setAnswer] = useState('');
     const addDataNum = (val) => {
         setValue(value += val);
     };
@@ -16,23 +16,36 @@ export default function CalculatorApp(props) {
         setValue('');
         setAnswer('');
     };
-
-    useEffect(() => {
-        // alert(value);
-    }, [value]);
     return (
         <div className="AppContainer">
             <h1>React Calculator</h1>
             <CalculatorScreen value={value} answer={answer} />
-            <div className="buttons">
-                {props.numButtons.map((button, idx) => (
-                    <CalcButton key={idx} dataNum={button} addDataNum={addDataNum} />
-                ))}
-                <div className="button" onClick={solve}>
-                    <p>=</p>
+            <div className="keys">
+                <div>
+                    <div className="operators1">
+                        {props.operators.map((button, idx) => (
+                            <CalcButton key={idx} dataNum={button} addDataNum={addDataNum} />
+                        ))}
+                        <div className="button" onClick={clear}>
+                            <p>C</p>
+                        </div>
+                    </div>
+                    <div className="buttons">
+                        {props.numButtons.map((button, idx) => (
+                            <CalcButton key={idx} dataNum={button} addDataNum={addDataNum} />
+                        ))}
+                        <div className="button" onClick={solve}>
+                            <p>=</p>
+                        </div>
+                    </div>
                 </div>
-                <div className="button" onClick={clear}>
-                    <p>C</p>
+                <div className="operators2">
+                    <div className="button clear" onClick={solve}>
+                        <p>clear</p>
+                    </div>
+                    {props.operators2.map((button, idx) => (
+                        <CalcButton key={idx} dataNum={button} addDataNum={addDataNum} />
+                    ))}
                 </div>
             </div>
         </div>
@@ -40,7 +53,9 @@ export default function CalculatorApp(props) {
 }
 
 CalculatorApp.defaultProps = {
-    numButtons: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.', "+", "-", "*", "/"]
+    numButtons: ['7', '8', '9', '4', '5', '6', '1', '2', '3', '.', '0'],
+    operators: ['(', ')', '%'],
+    operators2: ["/", "*", "-", "+"]
 };
 
 

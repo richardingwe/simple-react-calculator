@@ -1,0 +1,40 @@
+.screen {
+	width: 300px;
+	height: 180px;
+	background-color: rgb(68 68 96);
+	margin: 0 auto;
+}
+
+.screenValue {
+	width: 100%;
+	height: 50px;
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: right;
+	color: rgb(255, 255, 255);
+	/* display: flex; */
+	/* justify-content: flex-start; */
+	/* align-content: center; */
+}
+
+.screenValue p {
+	margin-top: 3rem;
+	padding-right: 1rem;
+}
+.answer p {
+	padding-right: 1rem;
+}
+
+.answer {
+	width: 100%;
+	height: 50px;
+	padding-right: 3rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+	text-align: right;
+	color: gainsboro;
+	/* display: flex; */
+	/* justify-content: flex-end; */
+	/* align-content: center; */
+	margin: 0 auto;
+}
