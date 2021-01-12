@@ -23,8 +23,7 @@ export default function CalculatorApp(props) {
     return (
         <div className="AppContainer">
             <h1>React Calculator</h1>
-            <CalculatorScreen value={value} />
-            <div>{answer}</div>
+            <CalculatorScreen value={value} answer={answer} />
             <div className="buttons">
                 {props.numButtons.map((button, idx) => (
                     <CalcButton key={idx} dataNum={button} addDataNum={addDataNum} />
