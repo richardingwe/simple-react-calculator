@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CalcButton from './CalcButton';
 import CalculatorScreen from "./CalculatorScreen";
+import History from "./History";
 import "./CalculatorApp.css";
 
 export default function CalculatorApp(props) {
     let [value, setValue] = useState('');
     let [answer, setAnswer] = useState('');
+    let [showHistory, setShowHistory] = useState(false);
+    let [history, setHistory] = useState([{ value: "2*3*4", answer: 24 }]);
     const addDataNum = (val) => {
         setValue(value += val);
     };
@@ -20,10 +23,18 @@ export default function CalculatorApp(props) {
         let cleared = value.slice(0, value.length - 1);
         setValue(cleared);
     };
+    const handleHistory = () => {
+        setShowHistory(!showHistory);
+    };
+    useEffect(() => {
+        const newHistory = [...history, { value, answer }];
+        setHistory(newHistory);
+    }, [answer]);
     return (
         <div className="AppContainer">
             <h1>React Calculator</h1>
-            <CalculatorScreen value={value} answer={answer} />
+            {showHistory && <History history={history} />}
+            <CalculatorScreen value={value} answer={answer} history={history} handleHistory={handleHistory} />
             <div className="keys">
                 <div>
                     <div className="operators1">
