@@ -13,7 +13,6 @@ export default function CalculatorScreen({ value, answer, history, handleHistory
             <div className="answer">
                 {answer && <p>= {answer} </p>}
             </div>
-
         </div>
     );
 }

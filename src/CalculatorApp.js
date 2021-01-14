@@ -8,7 +8,7 @@ export default function CalculatorApp(props) {
     let [value, setValue] = useState('');
     let [answer, setAnswer] = useState('');
     let [showHistory, setShowHistory] = useState(false);
-    let [history, setHistory] = useState([{ value: "2*3*4", answer: 24 }]);
+    let [history, setHistory] = useState([{ value: " " }]);
     const addDataNum = (val) => {
         setValue(value += val);
     };
