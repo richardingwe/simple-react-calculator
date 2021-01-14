@@ -5,13 +5,13 @@ export default function CalculatorScreen({ value, answer, history, handleHistory
     return (
         <div className="screen">
             <div className="history" onClick={handleHistory}>
-                <p>{history[0].value}</p>
+                <p>{history[0].value || history[1].value}</p>
             </div>
             <div className="screenValue">
                 <p>{value}</p>
             </div>
             <div className="answer">
-                {answer && <p>= {answer}</p>}
+                {answer && <p>= {answer} </p>}
             </div>
 
         </div>

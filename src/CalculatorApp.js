@@ -13,7 +13,7 @@ export default function CalculatorApp(props) {
         setValue(value += val);
     };
     const solve = () => {
-        setAnswer(eval(value));
+        setAnswer(eval(value).toString());
     };
     const clearAll = () => {
         setValue('');
@@ -27,7 +27,7 @@ export default function CalculatorApp(props) {
         setShowHistory(!showHistory);
     };
     useEffect(() => {
-        const newHistory = [...history, { value, answer }];
+        const newHistory = [{ value, answer }, ...history];
         setHistory(newHistory);
     }, [answer]);
     return (
