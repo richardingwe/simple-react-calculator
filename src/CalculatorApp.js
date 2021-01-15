@@ -33,7 +33,7 @@ export default function CalculatorApp(props) {
     return (
         <div className="AppContainer">
             <h1>React Calculator</h1>
-            {showHistory && <History history={history} />}
+            {showHistory && <History history={history} handleHistory={handleHistory} />}
             <CalculatorScreen value={value} answer={answer} history={history} handleHistory={handleHistory} />
             <div className="keys">
                 <div>

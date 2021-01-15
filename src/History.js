@@ -1,9 +1,11 @@
 import React from 'react';
+import "./History.css";
 
-export default function History({ history }) {
+export default function History({ history, handleHistory }) {
     return (
-        <div>
-            {history.map(his => (<div><p>{his.value}</p> <p>{his.answer}</p></div>))}
+        <div className="History">
+            <span className="close" onClick={handleHistory}>&#10006;</span>
+            {history.map((his, i) => (<div key={i}><p className="history-value">{his.value}</p> <p className="history-answer">{his.answer}</p></div>))}
         </div>
     );
 }
