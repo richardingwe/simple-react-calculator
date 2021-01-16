@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CalcButton from './CalcButton';
 import CalculatorScreen from "./CalculatorScreen";
 import History from "./History";
+import { evaluate } from "mathjs";
 import "./CalculatorApp.css";
 
 export default function CalculatorApp(props) {
@@ -13,7 +14,7 @@ export default function CalculatorApp(props) {
         setValue(value += val);
     };
     const solve = () => {
-        setAnswer(eval(value).toString());
+        setAnswer(evaluate(value).toString());
     };
     const clearAll = () => {
         setValue('');
