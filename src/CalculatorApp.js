@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CalcButton from './CalcButton';
 import CalculatorScreen from "./CalculatorScreen";
 import History from "./History";
@@ -15,9 +15,11 @@ export default function CalculatorApp(props) {
     };
     const solve = () => {
         setAnswer(evaluate(value).toString());
+    };
+    useEffect(() => {
         const newHistory = [{ value, answer }, ...history];
         setHistory(newHistory);
-    };
+    }, [answer]);
     const clearAll = () => {
         setValue('');
         setAnswer('');
@@ -29,9 +31,6 @@ export default function CalculatorApp(props) {
     const handleHistory = () => {
         setShowHistory(!showHistory);
     };
-    // useEffect(() => {
-
-    // }, []);
     return (
         <div className="AppContainer">
             <h1>React Calculator</h1>
