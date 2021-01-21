@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import CalcButton from './CalcButton';
 import CalculatorScreen from "./CalculatorScreen";
 import History from "./History";
 import { evaluate } from "mathjs";
 import "./CalculatorApp.css";
+import { useUpdateEffect } from 'react-use';
 
 export default function CalculatorApp(props) {
     let [value, setValue] = useState('');
@@ -16,9 +17,10 @@ export default function CalculatorApp(props) {
     const solve = () => {
         setAnswer(evaluate(value).toString());
     };
-    useEffect(() => {
+    useUpdateEffect(() => {
         const newHistory = [{ value, answer }, ...history];
         setHistory(newHistory);
+
     }, [answer]);
     const clearAll = () => {
         setValue('');
