@@ -1,1 +1,1 @@
-URL: react-calculator-rui.netlify.app
+URL: https://react-calculator-rui.netlify.app
